@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RealmDigital.Models.ContactMobile>
+@{ 
+    ViewBag.Title = "Contact Mobile";
+    Layout = null;
+}
+
+<p>
+    @Html.ActionLink("Add Mobile","AddContactMobile","Contact", new { contactId = ViewBag.ContactId }, new { style = "float:right;", data_modal = "mobile" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td width="80%">
+                @Html.DisplayFor(model => item.MobileNo)
+            </td>
+            <td align="right">
+                @Html.ActionLink("Edit", "EditContactMobile", "Contact", new { id = item.ID, contactId = ViewBag.ContactId }, new { @class = "edit-svg", data_modal = "mobile" })
+                @Html.ActionLink("Delete", "DeleteContactMobile", "Contact", new { id = item.ID, contactId = ViewBag.ContactId }, new { @class = "delete-svg", data_modal = "mobile" })
+
+            </td>
+        </tr>
+    }
+</table>

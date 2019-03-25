@@ -1,0 +1,29 @@
+﻿@model RealmDigital.Models.Contact
+
+<div class="modal-header">
+    <h4 class="modal-title">Delete Contact</h4>
+    <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+</div>
+<div class="modal-body">
+    <div class="form-horizontal">
+        <dl>
+            <dt>
+                Are you sure, you want to delete contact?
+                <br /><br />
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)&nbsp;@Html.DisplayFor(model => model.LastName)
+            </dd>
+        </dl>
+    </div>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmContact" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ID)
+        <div class="modal-footer">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+        </div>
+    }
+</div>
+

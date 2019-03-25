@@ -1,0 +1,32 @@
+﻿@model RealmDigital.Models.ContactMobile
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmContactMobile" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-header">
+        <h4 class="modal-title">Manage Contact Mobile</h4>
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+    </div>
+
+    <div class="modal-body">
+        <div class="form-horizontal">
+            @Html.HiddenFor(model => model.ContactID)
+            @Html.HiddenFor(model => model.ID)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MobileNo, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control" })
+                    <br />
+                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+}
+@Scripts.Render("~/Scripts/RealmDigitalScripts")

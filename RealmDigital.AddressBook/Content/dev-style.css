@@ -1,0 +1,14 @@
+a.edit-svg {
+    background: url(../Images/edit.svg) no-repeat top left;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px; /* hides the link text */
+    color:transparent;
+}
+a.delete-svg {
+    background: url(../Images/delete.svg) no-repeat top left;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px; /* hides the link text */
+    color: transparent;
+}

@@ -1,0 +1,69 @@
+﻿@using RealmDigital.Models
+@model IEnumerable<Contact>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="contactModal" class="modal fade show">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="contactContent"></div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    div#ListContact a {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+</style>
+<div class="card-layout primary-card">
+    <h1 class="title">Contacts</h1>
+
+    <form asp-controller="Contact" asp-action="Index">
+        <div class="row small-gutter">
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.TextBox("search", "", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label></label>
+                    <input type="submit" class="btn btn-primary" value="Search">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group ">
+                    <a href="@Url.Action("manage-contact", "Contact")" class="pull-right" style="float:right">Add Contact</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    @if (Model != null)
+    {
+        <div class="form-group">
+            <ul class="list-group">
+                @foreach (var contact in Model)
+                {
+                    <li class="list-group-item">
+                        <a href="@Url.Action("manage-contact", "Contact", new { id = contact.ID })">@contact.FirstName @contact.LastName</a>
+                        <div style="float:right;" id="ListContact">
+                            <a href="@Url.Action("manage-contact", "Contact", new { id = contact.ID })"><img style="height:18px;width:18px;" src="~/images/edit.svg" /></a>
+                            <a href="@Url.Action("DeleteContact","Contact",new { contactId = contact.ID })" data-modal="contact"><img style="height:18px;width:18px;" src="~/images/delete.svg" /></a>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+
+<script src="~/Scripts/contacts.js"></script>
+
+
+

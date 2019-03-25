@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contacts | RealmDigital</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width">
+    @*<link rel="shortcut icon" href="@Url.Content("~/images/favicon.ico")" />*@
+    @Styles.Render("~/Content/RealmDigitalStyles")
+    @Scripts.Render("~/Scripts/RealmDigitalScripts")
+
+</head>
+<body>
+ 
+    <header>
+        <div class="container">
+            <a href="index.html" class="brand" style="padding:21px 0;" title="Realm Digital"><span style="font-size:30px;"><span style="color:#2979FF">Realm</span>Digital</span></a>
+            <!-- main navigation start -->
+            <ul class="main-navigation">
+                <li class="active"><a href="@Url.Action("Index","Contact")" id="liTrip" title="Register Trip">Contacts</a></li>
+                @*<li><a href="@Url.Action("Refuelling","Register")" id="liRefuel" title="Register Refuelling">Register Refuelling</a></li>*@
+            </ul>
+            <!-- main navigation end -->
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-backdrop"><a href="#" title="Close"></a></div>
+    </header>
+
+    <section class="wrapper table-structure">
+        <section class="main-content">
+            @RenderBody()
+        </section>
+    </section>
+    <footer>© 2019 RealmDigital. All rights reserved.</footer>
+    @*<img src="@Url.Content("~/images/il-top-left.svg")" alt="Illustration" class="top-left-illustration" />
+    <img src="@Url.Content("~/images/il-bottom-right.svg")" alt="Illustration" class="bottom-right-illustration" />*@
+</body>
+</html>

@@ -1,0 +1,190 @@
+﻿@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700');
+@font-face { font-family: 'Glyphicons Halflings'; src: url(../fonts/glyphicons-halflings-regular.eot); src: url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(../fonts/glyphicons-halflings-regular.woff) format('woff'), url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg') }
+
+/*
+------------------------------------------------------------
+Project Name : Travel Organizer;
+------------------------------------------------------------
+*/
+
+/* Reset  */
+
+/* 
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* Css Clearfix */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* General */
+* { outline: none !important; }
+html, body { min-width: 320px; min-height: 100vh; }
+body { -ms-overflow-style: scrollbar; font-family: 'Muli', sans-serif; font-size: 14px; line-height: 18px; background: #F9F9F9; color: #2C2C2C; }
+.wrapper { min-height: 100vh; }
+.wrapper.table-structure { display: table; width: 100%; height: 100%; }
+a { color: #2c2c2c; text-decoration: none; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+a:hover, a:focus, a:active, a.active { text-decoration: none; color: #000; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.2em; padding: 0 0 20px; }
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { display: block; }
+p { padding: 0 0 20px; }
+input[type=text], input[type=email], input[type=password], textarea { -webkit-appearance: none; appearance: none; }
+::-webkit-input-placeholder { color: #000; }
+::-moz-placeholder { color: #000; }
+:-ms-input-placeholder { color: #000; }
+:-moz-placeholder { color: #000; }
+::-moz-focus-inner { border: 0; }
+select:-moz-focusring { color: transparent; text-shadow: 0 0 0 #000; }
+option:not(:checked) { color: black; }
+.row.small-gutter { margin-left: -8px; margin-right: -8px; }
+.row.small-gutter>div { padding-left: 8px; padding-right: 8px; }
+.top-left-illustration { position: fixed; height: 1000px; width: 1000px; left: -20px; top: -20px; z-index: -1; }
+.bottom-right-illustration { position: fixed; height: 1000px; width: 1000px; right: -20px; bottom: -20px; z-index: -1; }
+
+/* btn */
+.btn { font-weight: 700; padding: 11px 55px; font-size: 16px; line-height: 20px; border-radius: 0; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.btn-primary { background: #2979FF !important; box-shadow: none !important; }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active { background: #105EDF !important; }
+.btn-primary:focus { box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16) !important; }
+.form-btn { margin-top: 15px; }
+
+/* nav toggle */
+.nav-toggle { float: right; display: none; cursor: pointer; width: 60px; padding: 22px 15px; background: none; border: 0; }
+.nav-toggle>span { background: #2c2c2c; width: 100%; display: block; border-radius: 500px; height: 3px; }
+.nav-toggle>span+span { margin-top: 6px; }
+.nav-backdrop { position: fixed; z-index: 9; top: 0; bottom: 0; left: 0; right: 0; background: #000; opacity: 0; visibility: hidden; display: none; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.nav-backdrop>a { display: block; height: 100%; width: 100%; }
+
+/* glyphicon */
+.glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: 400; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale }
+.glyphicon-chevron-left:before { content: "\e079" }
+.glyphicon-chevron-right:before { content: "\e080" }
+
+/* header */
+header { background: #fff; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); position: fixed; top: 0; left: 0; right: 0; z-index: 10; }
+header .brand>img { height: 36px; width: 182px; display: block; }
+header .brand { display: inline-block; vertical-align: top; padding: 15px 0; }
+header .main-navigation { display: inline-block; vertical-align: top; float: right; }
+header .main-navigation>li { float: left; }
+header .main-navigation>li>a { color: #2c2c2c; display: block; padding: 24px 20px; font-size: 14px; line-height: 18px; font-weight: 600; position: relative; }
+header .main-navigation>li.active>a:after { position: absolute; content: ""; background: #2979FF; height: 4px; left: 10px; right: 10px; bottom: 0; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+header .main-navigation>li.active>a:hover, header .main-navigation>li.active>a:focus, header .main-navigation>li.active>a:active { background: transparent; }
+header .main-navigation>li>a:hover, header .main-navigation>li>a:focus, header .main-navigation>li>a:active { background: #f6f6f6; }
+
+/* main content */
+.wrapper.table-structure .main-content { display: table-cell; /*vertical-align: middle;*/ padding: 126px 0 58px; }
+
+/* datetime picker */
+.datepicker .backdrop>a { display: none; }
+.datepicker.active-datepicker.visible .backdrop>a, .timepicker.active-datepicker.visible .backdrop>a { display: block; }
+.datepicker .input-group-addon, .datepicker label.input-group-addon, .timepicker .input-group-addon, .timepicker label.input-group-addon { cursor: pointer; }
+.timepicker .bootstrap-datetimepicker-widget a[data-action] { padding: 4px 0 0; }
+.timepicker .bootstrap-datetimepicker-widget button[data-action] { padding: 8px 12px; }
+.timepicker .bootstrap-datetimepicker-widget table td, .bootstrap-datetimepicker-widget table th { vertical-align: top; }
+.bootstrap-datetimepicker-widget { z-index: 2000; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16); }
+.bootstrap-datetimepicker-widget.dropdown-menu { padding: 0; margin: 8px 0 0 0; border: none; border-radius: 0; }
+.bootstrap-datetimepicker-widget.top.dropdown-menu { margin-top: 0; margin-bottom: 36px; }
+.bootstrap-datetimepicker-widget table td, .bootstrap-datetimepicker-widget table th { border-radius: 0; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.bootstrap-datetimepicker-widget table thead { background: #2979FF; color: #fff; }
+.bootstrap-datetimepicker-widget table th.picker-switch { font-size: 16px; line-height: 36px; padding: 0; font-weight: normal; }
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after { border-bottom-color: #2979FF; }
+.bootstrap-datetimepicker-widget .dow { font-weight: normal; padding: 0; line-height: 32px; }
+.bootstrap-datetimepicker-widget .prev, .bootstrap-datetimepicker-widget .next { padding: 0; line-height: 36px; }
+.bootstrap-datetimepicker-widget .weekend.disabled, .bootstrap-datetimepicker-widget .weekend.old, .bootstrap-datetimepicker-widget .weekend.new { color: #f8c9c4 !important; }
+.bootstrap-datetimepicker-widget .disabled, .bootstrap-datetimepicker-widget .disabled:hover, .bootstrap-datetimepicker-widget .old, .bootstrap-datetimepicker-widget .new { color: #ccc !important; }
+.bootstrap-datetimepicker-widget table td.day { padding: 0; line-height: 36px; position: relative; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.bootstrap-datetimepicker-widget .weekend { color: #ee5353; }
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover { background: rgba(0, 0, 0, 0.1) !important; }
+.bootstrap-datetimepicker-widget table td.day.active, .bootstrap-datetimepicker-widget table td.day.active:hover, .bootstrap-datetimepicker-widget table td.day.active.weekend { background: #2979FF; color: #fff !important; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.bootstrap-datetimepicker-widget table td.day.today:before { height: 3px; width: 8px; background: #2979FF; border-radius: 500px; border: none; left: 50%; bottom: 7px; margin-left: -4px; }
+.bootstrap-datetimepicker-widget table td.day.active.today:before { background: #fff; }
+.bootstrap-datetimepicker-widget .disabled { text-decoration: line-through; }
+.bootstrap-datetimepicker-widget .prev.disabled, .bootstrap-datetimepicker-widget .next.disabled { opacity: 0; }
+.bootstrap-datetimepicker-widget table td a span { color: #2979FF; }
+.bootstrap-datetimepicker-widget table td span.active { background: #2979FF; }
+.bootstrap-datetimepicker-widget .timepicker-picker .table-condensed td>.btn-primary { background: #2979FF; border-color: #2979FF; }
+.bootstrap-datetimepicker-widget .datepicker-decades .decade { line-height: 18px !important; padding: 11px 0; }
+.bootstrap-datetimepicker-widget .datepicker-days { position: relative; }
+.bootstrap-datetimepicker-widget .picker-switch a { color: #2979FF; }
+.bootstrap-datetimepicker-widget .picker-switch span { margin: 0; border-radius: 0; }
+.bootstrap-datetimepicker-widget .picker-switch span:hover { background: #f2f2f2; }
+.bootstrap-datetimepicker-widget table th { width: 40px; }
+.bootstrap-datetimepicker-widget .picker-switch td span { line-height: 2.9; height: 2.9em; }
+
+/* form */
+.form-group>label { opacity: 0.8; font-size: 14px; line-height: 18px; padding-bottom: 6px; }
+.form-group { margin-bottom: 20px; }
+.form-group .form-control { border: 1px solid #D2D2D2; transition: border-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); border-radius: 0; box-shadow: none; height: 42px; padding: 5px 15px; background: #fff; }
+.form-group .form-control:focus { box-shadow: none; border-color: #2979FF; }
+.form-group select.custom-form-control { width: 100%; display: block; height: 42px; appearance: none; -webkit-appearance: none; -ms-appearance: none; -moz-appearance: none; -o-appearance: none; padding: 5px 15px; padding-right: 42px; background: #fff url('../images/ic-chevron-down-select.svg') right no-repeat; -webkit-background-size: 42px 42px; background-size: 42px 42px; border: 1px solid #D2D2D2; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); cursor: pointer; border-radius: 0; font-size: 16px; line-height: 20px; color: #2c2c2c; }
+.form-group select.custom-form-control:focus { border-color: #2979FF; }
+.form-group select.custom-form-control::-ms-expand { display: none; }
+.form-group .datepicker .form-control { background: #fff url('../images/ic-datepicker.svg') right no-repeat; -webkit-background-size: 42px 42px; background-size: 42px 42px; padding-right: 42px; cursor: pointer; }
+.form-group .form-control-static { font-size: 14px; line-height: 20px; padding-bottom: 0; }
+.form-group textarea.form-control { resize: vertical; height: auto; }
+
+/* card */
+.card-layout { background: #FFFFFF; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.07); }
+.card-layout.primary-card { max-width: 720px; margin: 0 auto; padding: 40px 40px 50px; padding-top: 120px; position: relative; }
+.card-layout.primary-card .title { font-size: 30px; line-height: 34px; padding: 33px 15px 33px 60px; background: #2979FF; color: #fff; font-weight: 700; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16); position: absolute; left: -20px; right: -20px; top: -20px; overflow: hidden; }
+.card-layout.primary-card .title:after { position: absolute; right: -10px; top: -10px; content: ""; background: url('../images/il-top-right-white.svg') center no-repeat; height: 200px; width: 200px; display: block; }
+
+/* checkbox */
+.form-group>.checkbox { padding: 11px 0; }
+.checkbox { margin: 0; }
+.checkbox>label { position: relative; padding: 0; cursor: pointer; }
+.checkbox>label>span { padding-left: 26px; display: inline-block; vertical-align: middle; line-height: 18px; font-size: 16px; line-height: 20px; }
+.checkbox>label>span:before { position: absolute; left: 0; top: 1px; height: 18px; width: 18px; content: ""; border: 1px solid #A9A9A9; display: block; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.checkbox>label>span:after { content: ""; position: absolute; left: 0; top: 1px; height: 18px; width: 18px; background: #2979FF url('../images/ic-check.svg') center no-repeat; opacity: 0; -webkit-background-size: 14px 14px; background-size: 14px 14px; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); }
+.checkbox>label>input:checked~span:after { opacity: 1; }
+.checkbox>label>input:focus~span:before { border-color: #2979FF; }
+.checkbox>label>input:focus~span:after { background-color: #105EDF; }
+.checkbox>label>input { position: absolute; top: 0; left: 0; opacity: 0; }
+
+/* footer */
+footer { opacity: 0.8; padding: 20px; text-align: center; margin-top: -58px; }
+
+/* Responsive Media Queries */
+@media (max-width:1199px) { }
+@media (max-width:991px) {
+	.card-layout.primary-card { max-width: 680px; padding: 30px 30px 40px; padding-top: 110px; }
+	.card-layout.primary-card .title { padding-left: 50px; }
+}
+@media (max-width:767px) {
+	.bootstrap-datetimepicker-widget { position: fixed !important; top: 25px !important; left: 50% !important; margin-left: -151px !important; bottom: auto !important; }
+	.datepicker, .timepicker { position: relative; }
+	.datepicker .backdrop, .timepicker .backdrop { position: fixed; background: #000; content: ""; top: 0; bottom: 0; left: 0; right: 0; z-index: 999; display: none; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); visibility: hidden; opacity: 0; }
+	.datepicker .backdrop a, .timepicker .backdrop a { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+	.datepicker.active-datepicker .backdrop, .timepicker.active-datepicker .backdrop { display: block; }
+	.bootstrap-datetimepicker-widget.dropdown-menu:after, .bootstrap-datetimepicker-widget.dropdown-menu:before { display: none; }
+	.datepicker.active-datepicker.visible .backdrop, .timepicker.active-datepicker.visible .backdrop { visibility: visible; opacity: 0.5; }
+	.bootstrap-datetimepicker-widget .list-unstyled { position: relative; z-index: 1000; }
+	.card-layout.primary-card { max-width: 320px; padding: 15px 15px 25px; }
+	header .main-navigation { position: fixed; top: 0; right: -260px; bottom: 0; overflow: auto; background: #fff; z-index: 11; float: none; transition: all 0.25s cubic-bezier(0.4, 0.0, 0.2, 1); width: 260px; opacity: 0; visibility: hidden; box-shadow: none; }
+	.nav-open header .main-navigation { right: 0; opacity: 1; visibility: visible; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16); }
+	header .main-navigation>li { float: none; display: block; }
+	header .main-navigation>li>a { padding: 15px 20px; }
+	header .main-navigation>li>a:hover, header .main-navigation>li>a:focus, header .main-navigation>li>a:active { background: #f6f6f6; }
+	header .main-navigation>li.active>a:after { left: 0; right: auto; bottom: 0; width: 4px; height: auto; bottom: 0; top: 0; }
+	.card-layout.primary-card .title { position: static; margin: -15px -15px 20px -15px; padding: 18px 15px; font-size: 20px; line-height: 24px; }
+	.wrapper.table-structure .main-content { padding-top: 96px; display: block; }
+	.wrapper.table-structure { display: block; height: auto; padding: 0 15px; }
+	.nav-toggle { display: block; }
+	.nav-backdrop { display: block; }
+	.nav-open .nav-backdrop { opacity: 0.5; visibility: visible; }
+	body.nav-open { height: auto; overflow: hidden; }
+}
+@media (max-width:575px) { }
