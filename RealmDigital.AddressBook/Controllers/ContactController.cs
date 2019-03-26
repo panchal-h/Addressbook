@@ -48,13 +48,18 @@ namespace RealmDigital.AddressBook.Controllers
         public ActionResult ManageContact(int id = 0)
         {
             ViewBag.ContactId = id;
-            Contact model = new Contact();
+            Contact model = null;
             if (id > 0)
             {
                 model = _contactBL.GetContactByID(id);
             }
 
-            return View("ManageContact",model);
+            if (model == null)
+            {
+                model = new Contact();
+            }
+
+            return View("ManageContact", model);
         }
 
         /// <summary>
