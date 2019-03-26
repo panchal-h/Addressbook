@@ -85,7 +85,14 @@ namespace RealmDigital.AddressBook.Controllers
                     contactEmail.EmailAddress = contact.EmailAddress;
                     _contactBL.SaveContactEmail(contactEmail);
                 }
-                return RedirectToAction("manage-contact", new { id = contactID });
+                if (contact.ID == 0)
+                {
+                    return RedirectToAction("manage-contact", new { id = contactID });
+                }
+                else
+                {
+                    return RedirectToAction("index");
+                }
             }
             return View("ManageContact", contact);
         }
